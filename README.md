@@ -17,7 +17,7 @@ Portfólio moderno e responsivo desenvolvido com HTML, CSS e JavaScript. O site 
 - **Formação acadêmica:** Bacharelado em Engenharia de Software pelo Centro Universitário FAG.
 - **Projetos:** Cards com projetos e estudos publicados no GitHub.
 - **Projeto principal:** Destaque para o TCC Jornada do Conhecimento, meu maior projeto desenvolvido até agora.
-- **Contato:** Formulário que abre o aplicativo de email com mensagem preenchida.
+- **Contato:** Links diretos para Email, WhatsApp, LinkedIn e GitHub.
 - **Design responsivo:** Interface adaptada para desktop, tablet e mobile.
 - **Animações suaves:** Efeitos de hover, transições e navegação com destaque automático.
 - **SEO básico:** Meta tags de descrição, Open Graph e tema configuradas no HTML.

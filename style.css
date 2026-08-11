@@ -191,8 +191,7 @@ a {
     margin-top: 32px;
 }
 
-.button,
-.contact-form button {
+.button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -205,14 +204,12 @@ a {
     transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
-.button:hover,
-.contact-form button:hover {
+.button:hover {
     transform: translateY(-2px);
     box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
 }
 
-.button.primary,
-.contact-form button {
+.button.primary {
     color: #ffffff;
     background: var(--teal);
 }
@@ -373,8 +370,7 @@ a {
 .expertise-card,
 .project-card,
 .tool-columns div,
-.education-card,
-.contact-form {
+.education-card {
     background: var(--surface);
     border: 1px solid var(--line);
     box-shadow: 0 10px 30px rgba(26, 41, 58, 0.08);
@@ -661,14 +657,17 @@ a {
 }
 
 .contact-section {
-    display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.72fr);
-    gap: clamp(28px, 5vw, 68px);
-    align-items: start;
+    display: block;
     color: #ffffff;
+    text-align: center;
     background:
         linear-gradient(135deg, rgba(16, 24, 32, 0.98), rgba(37, 46, 58, 0.97)),
         repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 96px);
+}
+
+.contact-copy {
+    max-width: 880px;
+    margin: 0 auto;
 }
 
 .contact-copy h2 {
@@ -677,79 +676,39 @@ a {
 
 .contact-copy p {
     max-width: 660px;
+    margin-right: auto;
+    margin-left: auto;
     color: rgba(255, 255, 255, 0.72);
 }
 
 .contact-links {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
     gap: 12px;
+    max-width: 780px;
     margin-top: 28px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .contact-links a {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    min-height: 44px;
-    padding: 0 14px;
+    justify-content: center;
+    min-height: 54px;
+    padding: 0 16px;
     color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     font-weight: 800;
+    transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
 }
 
 .contact-links a:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.contact-form {
-    display: grid;
-    gap: 10px;
-    padding: 28px;
-    color: var(--ink);
-}
-
-.contact-form label {
-    color: var(--ink-2);
-    font-size: 0.86rem;
-    font-weight: 900;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    border: 1px solid var(--line);
-    background: #f9fbfd;
-    color: var(--ink);
-    font: inherit;
-    outline: 0;
-    padding: 14px 15px;
-}
-
-.contact-form textarea {
-    min-height: 148px;
-    resize: vertical;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: var(--teal);
-    box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.14);
-}
-
-.contact-form button {
-    width: 100%;
-    margin-top: 10px;
-    border: 0;
-    font: inherit;
-}
-
-.form-status {
-    min-height: 22px;
-    margin: 0;
-    color: var(--teal);
-    font-size: 0.9rem;
-    font-weight: 800;
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(20, 184, 166, 0.72);
+    transform: translateY(-2px);
 }
 
 .site-footer {
@@ -809,8 +768,7 @@ a {
     }
 
     .hero,
-    .split,
-    .contact-section {
+    .split {
         grid-template-columns: 1fr;
     }
 
@@ -843,6 +801,10 @@ a {
     .education-card {
         grid-template-columns: 1fr;
     }
+
+    .contact-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 640px) {
@@ -867,8 +829,7 @@ a {
         font-size: 2.25rem;
     }
 
-    .hero-actions,
-    .contact-links {
+    .hero-actions {
         align-items: stretch;
         flex-direction: column;
     }
@@ -876,6 +837,10 @@ a {
     .button,
     .contact-links a {
         width: 100%;
+    }
+
+    .contact-links {
+        grid-template-columns: 1fr;
     }
 
     .stats,
