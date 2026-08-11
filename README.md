@@ -12,6 +12,7 @@ Portfólio moderno e responsivo desenvolvido com HTML, CSS e JavaScript. O site 
 
 - **Perfil profissional:** Apresentação com nome completo, área de atuação e resumo objetivo.
 - **Links sociais:** Acesso rápido para LinkedIn, GitHub, Email e WhatsApp.
+- **Tema claro/escuro:** Alternância de tema com preferência salva no navegador.
 - **Seção de competências:** Destaque para QA manual e automatizado, APIs, sistemas legados, front-end, mobile, rastreabilidade e metodologias ágeis.
 - **Experiência profissional:** Histórico com atuação como Analista de Testes na Maxicon Sistemas e Técnico de TI no Escritório Líder.
 - **Formação acadêmica:** Bacharelado em Engenharia de Software pelo Centro Universitário FAG.
@@ -29,7 +30,7 @@ Portfólio moderno e responsivo desenvolvido com HTML, CSS e JavaScript. O site 
 
 - **HTML5:** Estrutura semântica da página.
 - **CSS3:** Estilização customizada, responsividade e identidade visual.
-- **JavaScript:** Interações, destaque da navegação, ano automático e envio por email.
+- **JavaScript:** Interações, alternância de tema, destaque da navegação e ano automático.
 - **Bootstrap Icons:** Ícones usados nos botões e seções.
 - **Google Fonts:** Tipografia com Inter e Space Grotesk.
 
@@ -61,6 +62,7 @@ Portfólio moderno e responsivo desenvolvido com HTML, CSS e JavaScript. O site 
 nathanmariotto/
 +-- images/
 |   +-- eu.jpeg              # Foto usada no portfólio
+|   +-- favicon.svg          # Ícone exibido na aba do navegador
 +-- .gitignore               # Arquivos ignorados pelo Git
 +-- CNAME                    # Domínio customizado
 +-- index.html               # Página principal

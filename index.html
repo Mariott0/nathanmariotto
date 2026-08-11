@@ -1,331 +1,526 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Nathan Henrique Mariotto Ritz, Analista de Testes QA e estudante de Engenharia de Software com foco em automação, APIs, front-end, mobile e qualidade de software.">
-    <meta name="theme-color" content="#101820">
-    <meta property="og:title" content="Nathan Henrique Mariotto Ritz | QA e Engenharia de Software">
-    <meta property="og:description" content="Analista de Testes QA com experiência em testes manuais, automatizados, APIs REST, PL/SQL, Angular e desenvolvimento front-end/mobile.">
-    <meta property="og:type" content="website">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfólio de Nathan Henrique Mariotto Ritz, Analista de Testes QA e estudante de Engenharia de Software com foco em automação, APIs, front-end, mobile e qualidade de software."
+    />
+    <meta name="theme-color" content="#101820" />
+    <meta
+      property="og:title"
+      content="Nathan Mariotto | QA e Engenharia de Software"
+    />
+    <meta
+      property="og:description"
+      content="Analista de Testes QA com experiência em testes manuais, automatizados, APIs REST, PL/SQL, Angular e desenvolvimento front-end/mobile."
+    />
+    <meta property="og:type" content="website" />
     <title>Nathan Henrique Mariotto Ritz | QA e Engenharia de Software</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="site-header">
-        <a class="brand" href="#inicio" aria-label="Voltar ao início">
-            <span class="brand-name">Nathan Mariotto</span>
-        </a>
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem("portfolio-theme");
+          const systemTheme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          document.documentElement.dataset.theme = savedTheme || systemTheme;
+        } catch {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Voltar ao início">
+        <span class="brand-name">Nathan Mariotto</span>
+      </a>
+
+      <div class="header-actions">
         <nav class="main-nav" aria-label="Navegação principal">
-            <a href="#competencias">Competências</a>
-            <a href="#experiencia">Experiência</a>
-            <a href="#formacao">Formação</a>
-            <a href="#projetos">Projetos</a>
-            <a href="#contato">Contato</a>
+          <a href="#competencias">Competências</a>
+          <a href="#experiencia">Experiência</a>
+          <a href="#formacao">Formação</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#contato">Contato</a>
         </nav>
+
+        <button class="theme-toggle" type="button" id="themeToggle" aria-label="Alternar tema">
+          <i class="bi bi-sun-fill theme-icon-sun" aria-hidden="true"></i>
+          <i class="bi bi-moon-stars-fill theme-icon-moon" aria-hidden="true"></i>
+        </button>
+      </div>
     </header>
 
     <main>
-        <section class="hero" id="inicio">
-            <div class="hero-content">
-                <p class="eyebrow">Quality Assurance • Automação • Produto</p>
-                <h1>Nathan Henrique Mariotto Ritz</h1>
-                <p class="hero-role">Analista de Testes QA | Engenharia de Software | Automação e Produto</p>
-                <p class="hero-copy">
-                    Atuo com testes manuais e automatizados, validação de APIs REST, Oracle Forms e melhoria contínua, conectando requisitos, qualidade técnica e valor de negócio.
-                </p>
+      <section class="hero" id="inicio">
+        <div class="hero-content">
+          <p class="eyebrow">Quality Assurance • Automação • Produto</p>
+          <h1>Nathan Henrique Mariotto Ritz</h1>
+          <p class="hero-role">
+            Analista de Testes QA | Engenharia de Software | Automação e Produto
+          </p>
+          <p class="hero-copy">
+            Atuo com testes manuais e automatizados, validação de APIs REST,
+            Oracle Forms e melhoria contínua, conectando requisitos, qualidade
+            técnica e valor de negócio.
+          </p>
 
-                <div class="hero-actions">
-                    <a class="button primary" href="#projetos">
-                        <i class="bi bi-grid-1x2-fill" aria-hidden="true"></i>
-                        Ver projetos
-                    </a>
-                    <a class="button secondary" href="https://www.linkedin.com/in/nathanmariotto" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-linkedin" aria-hidden="true"></i>
-                        LinkedIn
-                    </a>
-                </div>
+          <div class="hero-actions">
+            <a class="button primary" href="#projetos">
+              <i class="bi bi-grid-1x2-fill" aria-hidden="true"></i>
+              Ver projetos
+            </a>
+            <a
+              class="button secondary"
+              href="https://www.linkedin.com/in/nathanmariotto"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bi bi-linkedin" aria-hidden="true"></i>
+              LinkedIn
+            </a>
+          </div>
 
-                <ul class="hero-stack" aria-label="Tecnologias e ferramentas principais">
-                    <li>Postman</li>
-                    <li>Selenium</li>
-                    <li>Power Automate</li>
-                    <li>PL/SQL</li>
-                    <li>Angular</li>
-                    <li>React Native</li>
-                    <li>Scrum</li>
-                    <li>Kanban</li>
-                </ul>
-            </div>
+          <ul
+            class="hero-stack"
+            aria-label="Tecnologias e ferramentas principais"
+          >
+            <li>Postman</li>
+            <li>Selenium</li>
+            <li>Power Automate</li>
+            <li>PL/SQL</li>
+            <li>Angular</li>
+            <li>React Native</li>
+            <li>Scrum</li>
+            <li>Kanban</li>
+          </ul>
+        </div>
 
-            <div class="hero-visual" aria-label="Foto de Nathan Henrique Mariotto Ritz">
-                <div class="portrait-frame">
-                    <img src="images/eu.jpeg" alt="Foto de Nathan Henrique Mariotto Ritz">
-                </div>
-                <div class="availability-card">
-                    <span class="status-dot" aria-hidden="true"></span>
-                    <span>Toledo, PR • QA e Desenvolvimento</span>
-                </div>
-            </div>
-        </section>
+        <div
+          class="hero-visual"
+          aria-label="Foto de Nathan Henrique Mariotto Ritz"
+        >
+          <div class="portrait-frame">
+            <img
+              src="images/eu.jpeg"
+              alt="Foto de Nathan Henrique Mariotto Ritz"
+            />
+          </div>
+          <div class="availability-card">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Toledo, PR • QA e Desenvolvimento</span>
+          </div>
+        </div>
+      </section>
 
-        <section class="stats" aria-label="Resumo profissional">
-            <div>
-                <strong>2+ anos</strong>
-                <span>em QA na Maxicon Sistemas</span>
-            </div>
-            <div>
-                <strong>3+ anos</strong>
-                <span>de base técnica em TI e suporte</span>
-            </div>
-            <div>
-                <strong>30</strong>
-                <span>repositórios e estudos no GitHub</span>
-            </div>
-            <div>
-                <strong>2026</strong>
-                <span>conclusão em Engenharia de Software</span>
-            </div>
-        </section>
+      <section class="stats" aria-label="Resumo profissional">
+        <div>
+          <strong>2+ anos</strong>
+          <span>em QA na Maxicon Sistemas</span>
+        </div>
+        <div>
+          <strong>3+ anos</strong>
+          <span>de base técnica em TI e suporte</span>
+        </div>
+        <div>
+          <strong>30</strong>
+          <span>repositórios e estudos no GitHub</span>
+        </div>
+        <div>
+          <strong>2026</strong>
+          <span>conclusão em Engenharia de Software</span>
+        </div>
+      </section>
 
-        <section class="section" id="competencias">
-            <div class="section-heading">
-                <p class="eyebrow">Competências</p>
-                <h2>Qualidade de software com visão de produto.</h2>
-                <p>Minha atuação combina testes, automação, documentação e desenvolvimento para apoiar entregas estáveis do planejamento até a homologação.</p>
-            </div>
+      <section class="section" id="competencias">
+        <div class="section-heading">
+          <p class="eyebrow">Competências</p>
+          <h2>Qualidade de software com visão de produto.</h2>
+          <p>
+            Minha atuação combina testes, automação, documentação e
+            desenvolvimento para apoiar entregas estáveis do planejamento até a
+            homologação.
+          </p>
+        </div>
 
-            <div class="expertise-grid">
-                <article class="expertise-card">
-                    <i class="bi bi-shield-check" aria-hidden="true"></i>
-                    <h3>QA manual e automatizado</h3>
-                    <p>Planejamento, execução e acompanhamento de testes funcionais, regressivos, exploratórios, automatizados e de estresse.</p>
-                </article>
-                <article class="expertise-card">
-                    <i class="bi bi-diagram-3" aria-hidden="true"></i>
-                    <h3>APIs, dados e sistemas legados</h3>
-                    <p>Validação de APIs REST com Postman e Insomnia, apoio com PL/SQL e testes em ambientes Oracle Forms 6i e 12c.</p>
-                </article>
-                <article class="expertise-card">
-                    <i class="bi bi-window-stack" aria-hidden="true"></i>
-                    <h3>Front-end e mobile</h3>
-                    <p>Projetos com Angular, React Native, Node.js, NestJS e PostgreSQL, com atenção a usabilidade, performance e integração.</p>
-                </article>
-                <article class="expertise-card">
-                    <i class="bi bi-clipboard-data" aria-hidden="true"></i>
-                    <h3>Rastreabilidade e melhoria contínua</h3>
-                    <p>Casos de teste reutilizáveis, evidências claras, acompanhamento de bugs, métricas de qualidade e homologações assistidas.</p>
-                </article>
-                <article class="expertise-card">
-                    <i class="bi bi-kanban" aria-hidden="true"></i>
-                    <h3>Metodologias ágeis e produto</h3>
-                    <p>Conhecimento em Scrum e Kanban, com aprofundamento nos papéis de Product Owner, planejamento, levantamento de requisitos, refinamento e priorização.</p>
-                </article>
-            </div>
-        </section>
+        <div class="expertise-grid">
+          <article class="expertise-card">
+            <i class="bi bi-shield-check" aria-hidden="true"></i>
+            <h3>QA manual e automatizado</h3>
+            <p>
+              Planejamento, execução e acompanhamento de testes funcionais,
+              regressivos, exploratórios, automatizados e de estresse.
+            </p>
+          </article>
+          <article class="expertise-card">
+            <i class="bi bi-diagram-3" aria-hidden="true"></i>
+            <h3>APIs, dados e sistemas legados</h3>
+            <p>
+              Validação de APIs REST com Postman e Insomnia, apoio com PL/SQL e
+              testes em ambientes Oracle Forms 6i e 12c.
+            </p>
+          </article>
+          <article class="expertise-card">
+            <i class="bi bi-window-stack" aria-hidden="true"></i>
+            <h3>Front-end e mobile</h3>
+            <p>
+              Projetos com Angular, React Native, Node.js, NestJS e PostgreSQL,
+              com atenção a usabilidade, performance e integração.
+            </p>
+          </article>
+          <article class="expertise-card">
+            <i class="bi bi-clipboard-data" aria-hidden="true"></i>
+            <h3>Rastreabilidade e melhoria contínua</h3>
+            <p>
+              Casos de teste reutilizáveis, evidências claras, acompanhamento de
+              bugs, métricas de qualidade e homologações assistidas.
+            </p>
+          </article>
+          <article class="expertise-card">
+            <i class="bi bi-kanban" aria-hidden="true"></i>
+            <h3>Metodologias ágeis e produto</h3>
+            <p>
+              Conhecimento em Scrum e Kanban, com aprofundamento nos papéis de
+              Product Owner, planejamento, levantamento de requisitos,
+              refinamento e priorização.
+            </p>
+          </article>
+        </div>
+      </section>
 
-        <section class="section split" id="experiencia">
-            <div class="section-heading align-left">
-                <p class="eyebrow">Experiência</p>
-                <h2>Trajetória construída entre suporte e testes.</h2>
-                <p>Minha base técnica com usuários, incidentes e processos corporativos fortalece a forma como testo, documento e colaboro com times de desenvolvimento, produto e suporte.</p>
-            </div>
+      <section class="section split" id="experiencia">
+        <div class="section-heading align-left">
+          <p class="eyebrow">Experiência</p>
+          <h2>Trajetória construída entre suporte e testes.</h2>
+          <p>
+            Minha base técnica com usuários, incidentes e processos corporativos
+            fortalece a forma como testo, documento e colaboro com times de
+            desenvolvimento, produto e suporte.
+          </p>
+        </div>
 
-            <div class="timeline">
-                <article class="timeline-item">
-                    <span class="timeline-date">Jun 2024 - Atual</span>
-                    <h3>Analista de Testes • Maxicon Sistemas</h3>
-                    <p>Atuação em testes web, mobile, APIs e sistemas legados, com automações, macros, relatórios gerenciais, análise de incidentes e homologações com usuários-chave.</p>
-                </article>
-                <article class="timeline-item">
-                    <span class="timeline-date">Mai 2021 - Jun 2024</span>
-                    <h3>Técnico de TI • Escritório Líder</h3>
-                    <p>Experiência em suporte técnico, resolução de problemas e atendimento interno, criando uma base sólida para entender operação, usuários e impacto real dos sistemas.</p>
-                </article>
-            </div>
-        </section>
+        <div class="timeline">
+          <article class="timeline-item">
+            <span class="timeline-date">Jun 2024 - Atual</span>
+            <h3>Analista de Testes • Maxicon Sistemas</h3>
+            <p>
+              Atuação em testes web, mobile, APIs e sistemas legados, com
+              automações, macros, relatórios gerenciais, análise de incidentes e
+              homologações com usuários-chave.
+            </p>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-date">Mai 2021 - Jun 2024</span>
+            <h3>Técnico de TI • Escritório Líder</h3>
+            <p>
+              Experiência em suporte técnico, resolução de problemas e
+              atendimento interno, criando uma base sólida para entender
+              operação, usuários e impacto real dos sistemas.
+            </p>
+          </article>
+        </div>
+      </section>
 
-        <section class="section education-section" id="formacao">
-            <div class="section-heading">
-                <p class="eyebrow">Formação</p>
-                <h2>Base acadêmica em Engenharia de Software.</h2>
-                <p>Formação voltada a fundamentos de software, boas práticas de desenvolvimento, arquitetura, banco de dados e construção de soluções digitais.</p>
-            </div>
+      <section class="section education-section" id="formacao">
+        <div class="section-heading">
+          <p class="eyebrow">Formação</p>
+          <h2>Base acadêmica em Engenharia de Software.</h2>
+          <p>
+            Formação voltada a fundamentos de software, boas práticas de
+            desenvolvimento, arquitetura, banco de dados e construção de
+            soluções digitais.
+          </p>
+        </div>
 
-            <article class="education-card">
-                <div class="education-icon">
-                    <i class="bi bi-mortarboard-fill" aria-hidden="true"></i>
-                </div>
-                <div>
-                    <span class="education-period">Jan 2023 - Jan 2026</span>
-                    <h3>Bacharelado em Engenharia de Software</h3>
-                    <p>Centro Universitário FAG</p>
-                </div>
-                <ul aria-label="Temas de formação">
-                    <li>Desenvolvimento de software</li>
-                    <li>Banco de dados</li>
-                    <li>Arquitetura e boas práticas</li>
-                    <li>Projetos acadêmicos aplicados</li>
-                </ul>
-            </article>
-        </section>
+        <article class="education-card">
+          <div class="education-icon">
+            <i class="bi bi-mortarboard-fill" aria-hidden="true"></i>
+          </div>
+          <div>
+            <span class="education-period">Jan 2023 - Jan 2026</span>
+            <h3>Bacharelado em Engenharia de Software</h3>
+            <p>Centro Universitário FAG</p>
+          </div>
+          <ul aria-label="Temas de formação">
+            <li>Desenvolvimento de software</li>
+            <li>Banco de dados</li>
+            <li>Arquitetura e boas práticas</li>
+            <li>Projetos acadêmicos aplicados</li>
+          </ul>
+        </article>
+      </section>
 
-        <section class="section" id="projetos">
-            <div class="section-heading">
-                <p class="eyebrow">Projetos</p>
-                <h2>Projetos com foco em produto, dados e automação.</h2>
-                <p>Meu principal destaque é o TCC Jornada do Conhecimento, o maior projeto que desenvolvi até agora, além de estudos e aplicações que mostram minha evolução técnica.</p>
-            </div>
+      <section class="section" id="projetos">
+        <div class="section-heading">
+          <p class="eyebrow">Projetos</p>
+          <h2>Projetos com foco em produto, dados e automação.</h2>
+          <p>
+            Meu principal destaque é o TCC Jornada do Conhecimento, o maior
+            projeto que desenvolvi até agora, além de estudos e aplicações que
+            mostram minha evolução técnica.
+          </p>
+        </div>
 
-            <div class="projects-grid">
-                <article class="project-card featured">
-                    <div class="project-topline">
-                        <span>TCC • Projeto principal</span>
-                        <i class="bi bi-stars" aria-hidden="true"></i>
-                    </div>
-                    <h3>Jornada do Conhecimento</h3>
-                    <p>Meu maior projeto até agora: TCC desenvolvido com foco em planejamento, levantamento de requisitos, organização de funcionalidades e construção de uma solução completa.</p>
-                    <a href="https://github.com/Mariott0/jornada-do-conhecimento" target="_blank" rel="noopener noreferrer">Ver repositório</a>
-                </article>
-                <article class="project-card">
-                    <div class="project-topline">
-                        <span>Python</span>
-                        <i class="bi bi-music-note-list" aria-hidden="true"></i>
-                    </div>
-                    <h3>Playlist Downloader Pro</h3>
-                    <p>Ferramenta para download e organização de playlists, explorando automação, manipulação de arquivos e criação de fluxos práticos em Python.</p>
-                    <span class="project-note">Projeto privado</span>
-                </article>
-                <article class="project-card">
-                    <div class="project-topline">
-                        <span>HTML • Game</span>
-                        <i class="bi bi-controller" aria-hidden="true"></i>
-                    </div>
-                    <h3>Space War Game NHR</h3>
-                    <p>Jogo web desenvolvido para praticar lógica, interação visual, eventos, responsividade e construção de uma experiência divertida no navegador.</p>
-                    <a href="https://github.com/Mariott0/spacewargamenhr" target="_blank" rel="noopener noreferrer">Ver repositório</a>
-                </article>
-                <article class="project-card">
-                    <div class="project-topline">
-                        <span>TypeScript</span>
-                        <i class="bi bi-calendar-check" aria-hidden="true"></i>
-                    </div>
-                    <h3>Gerente de Clínica</h3>
-                    <p>Aplicação para gestão de clínica, com foco em organização de rotinas, cadastro e fluxo operacional.</p>
-                    <a href="https://github.com/Mariott0/ClinicManager" target="_blank" rel="noopener noreferrer">Ver repositório</a>
-                </article>
-                <article class="project-card">
-                    <div class="project-topline">
-                        <span>TypeScript</span>
-                        <i class="bi bi-hdd-network" aria-hidden="true"></i>
-                    </div>
-                    <h3>Backend módulo agendamento</h3>
-                    <p>Módulo back-end voltado a regras de agendamento, integração e separação de responsabilidades.</p>
-                    <a href="https://github.com/Mariott0/backend-modulo-agendamento" target="_blank" rel="noopener noreferrer">Ver repositório</a>
-                </article>
-                <article class="project-card">
-                    <div class="project-topline">
-                        <span>Python</span>
-                        <i class="bi bi-graph-up-arrow" aria-hidden="true"></i>
-                    </div>
-                    <h3>Ciência de Dados</h3>
-                    <p>Estudos com Python para análise, processamento e visualização de dados em contexto acadêmico.</p>
-                    <a href="https://github.com/Mariott0/dataScience1" target="_blank" rel="noopener noreferrer">Ver repositório</a>
-                </article>
-                <article class="project-card">
-                    <div class="project-topline">
-                        <span>HTML</span>
-                        <i class="bi bi-file-earmark-spreadsheet" aria-hidden="true"></i>
-                    </div>
-                    <h3>Gerador de Orçamento</h3>
-                    <p>Ferramenta web para organizar informações de orçamento com uma interface simples e objetiva.</p>
-                    <a href="https://github.com/Mariott0/gerador-orcamento" target="_blank" rel="noopener noreferrer">Ver repositório</a>
-                </article>
-                <article class="project-card">
-                    <div class="project-topline">
-                        <span>TypeScript</span>
-                        <i class="bi bi-phone" aria-hidden="true"></i>
-                    </div>
-                    <h3>Aplicativo Holerite</h3>
-                    <p>Aplicação mobile para consulta de informações de holerite, explorando experiência de usuário e telas funcionais.</p>
-                    <a href="https://github.com/Mariott0/holerite-app" target="_blank" rel="noopener noreferrer">Ver repositório</a>
-                </article>
-                <article class="project-card">
-                    <div class="project-topline">
-                        <span>Automação</span>
-                        <i class="bi bi-robot" aria-hidden="true"></i>
-                    </div>
-                    <h3>Bot WhatsJS</h3>
-                    <p>Experimento de automação para mensageria, reforçando lógica de eventos, integração e fluxo conversacional.</p>
-                    <a href="https://github.com/Mariott0/bot-whatsjs" target="_blank" rel="noopener noreferrer">Ver repositório</a>
-                </article>
+        <div class="projects-grid">
+          <article class="project-card featured">
+            <div class="project-topline">
+              <span>TCC • Projeto principal</span>
+              <i class="bi bi-stars" aria-hidden="true"></i>
             </div>
-        </section>
+            <h3>Jornada do Conhecimento</h3>
+            <p>
+              Meu maior projeto até agora: TCC desenvolvido com foco em
+              planejamento, levantamento de requisitos, organização de
+              funcionalidades e construção de uma solução completa.
+            </p>
+            <a
+              href="https://github.com/Mariott0/jornada-do-conhecimento"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Ver repositório</a
+            >
+          </article>
+          <article class="project-card">
+            <div class="project-topline">
+              <span>Python</span>
+              <i class="bi bi-music-note-list" aria-hidden="true"></i>
+            </div>
+            <h3>Playlist Downloader Pro</h3>
+            <p>
+              Ferramenta para download e organização de playlists, explorando
+              automação, manipulação de arquivos e criação de fluxos práticos em
+              Python.
+            </p>
+            <span class="project-note">Projeto privado</span>
+          </article>
+          <article class="project-card">
+            <div class="project-topline">
+              <span>HTML • Game</span>
+              <i class="bi bi-controller" aria-hidden="true"></i>
+            </div>
+            <h3>Space War Game NHR</h3>
+            <p>
+              Jogo web desenvolvido para praticar lógica, interação visual,
+              eventos, responsividade e construção de uma experiência divertida
+              no navegador.
+            </p>
+            <a
+              href="https://github.com/Mariott0/spacewargamenhr"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Ver repositório</a
+            >
+          </article>
+          <article class="project-card">
+            <div class="project-topline">
+              <span>TypeScript</span>
+              <i class="bi bi-calendar-check" aria-hidden="true"></i>
+            </div>
+            <h3>Gerente de Clínica</h3>
+            <p>
+              Aplicação para gestão de clínica, com foco em organização de
+              rotinas, cadastro e fluxo operacional.
+            </p>
+            <a
+              href="https://github.com/Mariott0/ClinicManager"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Ver repositório</a
+            >
+          </article>
+          <article class="project-card">
+            <div class="project-topline">
+              <span>TypeScript</span>
+              <i class="bi bi-hdd-network" aria-hidden="true"></i>
+            </div>
+            <h3>Backend módulo agendamento</h3>
+            <p>
+              Módulo back-end voltado a regras de agendamento, integração e
+              separação de responsabilidades.
+            </p>
+            <a
+              href="https://github.com/Mariott0/backend-modulo-agendamento"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Ver repositório</a
+            >
+          </article>
+          <article class="project-card">
+            <div class="project-topline">
+              <span>Python</span>
+              <i class="bi bi-graph-up-arrow" aria-hidden="true"></i>
+            </div>
+            <h3>Ciência de Dados</h3>
+            <p>
+              Estudos com Python para análise, processamento e visualização de
+              dados em contexto acadêmico.
+            </p>
+            <a
+              href="https://github.com/Mariott0/dataScience1"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Ver repositório</a
+            >
+          </article>
+          <article class="project-card">
+            <div class="project-topline">
+              <span>HTML</span>
+              <i class="bi bi-file-earmark-spreadsheet" aria-hidden="true"></i>
+            </div>
+            <h3>Gerador de Orçamento</h3>
+            <p>
+              Ferramenta web para organizar informações de orçamento com uma
+              interface simples e objetiva.
+            </p>
+            <a
+              href="https://github.com/Mariott0/gerador-orcamento"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Ver repositório</a
+            >
+          </article>
+          <article class="project-card">
+            <div class="project-topline">
+              <span>TypeScript</span>
+              <i class="bi bi-phone" aria-hidden="true"></i>
+            </div>
+            <h3>Aplicativo Holerite</h3>
+            <p>
+              Aplicação mobile para consulta de informações de holerite,
+              explorando experiência de usuário e telas funcionais.
+            </p>
+            <a
+              href="https://github.com/Mariott0/holerite-app"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Ver repositório</a
+            >
+          </article>
+          <article class="project-card">
+            <div class="project-topline">
+              <span>Automação</span>
+              <i class="bi bi-robot" aria-hidden="true"></i>
+            </div>
+            <h3>Bot WhatsJS</h3>
+            <p>
+              Experimento de automação para mensageria, reforçando lógica de
+              eventos, integração e fluxo conversacional.
+            </p>
+            <a
+              href="https://github.com/Mariott0/bot-whatsjs"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Ver repositório</a
+            >
+          </article>
+        </div>
+      </section>
 
-        <section class="section toolkit" aria-label="Ferramentas e tecnologias">
-            <div class="section-heading align-left">
-                <p class="eyebrow">Ferramentas</p>
-                <h2>Stack que uso para testar, construir e evoluir sistemas.</h2>
-            </div>
+      <section class="section toolkit" aria-label="Ferramentas e tecnologias">
+        <div class="section-heading align-left">
+          <p class="eyebrow">Ferramentas</p>
+          <h2>Stack que uso para testar, construir e evoluir sistemas.</h2>
+        </div>
 
-            <div class="tool-columns">
-                <div>
-                    <h3>Qualidade</h3>
-                    <p>Testes funcionais, regressão, exploratórios, estresse, Selenium, Postman, Insomnia, Power Automate e VBA.</p>
-                </div>
-                <div>
-                    <h3>Desenvolvimento</h3>
-                    <p>Angular, React Native, JavaScript, TypeScript, Node.js, NestJS, HTML, CSS e Git/GitHub.</p>
-                </div>
-                <div>
-                    <h3>Dados e processos</h3>
-                    <p>PL/SQL, PostgreSQL, documentação de casos de teste, evidências, métricas e relatórios de qualidade.</p>
-                </div>
-                <div>
-                    <h3>Agilidade e produto</h3>
-                    <p>Scrum, Kanban, Product Owner, planejamento, levantamento de requisitos, refinamento, priorização e alinhamento com regras de negócio.</p>
-                </div>
-            </div>
-        </section>
+        <div class="tool-columns">
+          <div>
+            <h3>Qualidade</h3>
+            <p>
+              Testes funcionais, regressão, exploratórios, estresse, Selenium,
+              Postman, Insomnia, Power Automate e VBA.
+            </p>
+          </div>
+          <div>
+            <h3>Desenvolvimento</h3>
+            <p>
+              Angular, React Native, JavaScript, TypeScript, Node.js, NestJS,
+              HTML, CSS e Git/GitHub.
+            </p>
+          </div>
+          <div>
+            <h3>Dados e processos</h3>
+            <p>
+              PL/SQL, PostgreSQL, documentação de casos de teste, evidências,
+              métricas e relatórios de qualidade.
+            </p>
+          </div>
+          <div>
+            <h3>Agilidade e produto</h3>
+            <p>
+              Scrum, Kanban, Product Owner, planejamento, levantamento de
+              requisitos, refinamento, priorização e alinhamento com regras de
+              negócio.
+            </p>
+          </div>
+        </div>
+      </section>
 
-        <section class="contact-section" id="contato">
-            <div class="contact-copy">
-                <p class="eyebrow">Contato</p>
-                <h2>Dúvidas, feedbacks ou sugestões?</h2>
-                <p>Fique à vontade para me chamar pelos canais abaixo. Estou aberto a feedbacks, ideias de melhoria, oportunidades e troca de conhecimento.</p>
-                <div class="contact-links">
-                    <a href="mailto:loucosgamer124@gmail.com">
-                        <i class="bi bi-envelope" aria-hidden="true"></i>
-                        Email
-                    </a>
-                    <a href="https://wa.me/44997437346" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-whatsapp" aria-hidden="true"></i>
-                        WhatsApp
-                    </a>
-                    <a href="https://www.linkedin.com/in/nathanmariotto" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-linkedin" aria-hidden="true"></i>
-                        LinkedIn
-                    </a>
-                    <a href="https://github.com/Mariott0" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-github" aria-hidden="true"></i>
-                        GitHub
-                    </a>
-                </div>
-            </div>
-        </section>
+      <section class="contact-section" id="contato">
+        <div class="contact-copy">
+          <p class="eyebrow">Contato</p>
+          <h2>Dúvidas, feedbacks ou sugestões?</h2>
+          <p>
+            Fique à vontade para me chamar pelos canais abaixo. Estou aberto a
+            feedbacks, ideias de melhoria, oportunidades e troca de
+            conhecimento.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:loucosgamer124@gmail.com">
+              <i class="bi bi-envelope" aria-hidden="true"></i>
+              Email
+            </a>
+            <a
+              href="https://wa.me/44997437346"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bi bi-whatsapp" aria-hidden="true"></i>
+              WhatsApp
+            </a>
+            <a
+              href="https://www.linkedin.com/in/nathanmariotto"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bi bi-linkedin" aria-hidden="true"></i>
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/Mariott0"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bi bi-github" aria-hidden="true"></i>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
-        <p>© <span id="currentYear"></span> Nathan Mariotto. Portfólio profissional.</p>
-        <a href="#inicio">Voltar ao topo</a>
+      <p>
+        © <span id="currentYear"></span> Nathan Mariotto. Portfólio
+        profissional.
+      </p>
+      <a href="#inicio">Voltar ao topo</a>
     </footer>
 
     <script src="script.js" defer></script>
-</body>
+  </body>
 </html>
