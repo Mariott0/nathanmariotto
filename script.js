@@ -62,6 +62,7 @@ if (!prefersReducedMotion && "IntersectionObserver" in window) {
         ".tech-pill",
         ".artifact-card",
         ".case-gallery",
+        ".presentation-panel",
         ".result-panel",
         ".team-panel",
         ".tool-columns > div",
