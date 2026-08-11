@@ -1,7 +1,10 @@
 const currentYear = document.querySelector("#currentYear");
 const themeToggle = document.querySelector("#themeToggle");
 const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+const documentElement = document.documentElement;
+const siteHeader = document.querySelector(".site-header");
 const navLinks = document.querySelectorAll(".main-nav a");
+const pressableElements = document.querySelectorAll(".button, .contact-links a, .theme-toggle");
 const sections = [...navLinks]
     .map((link) => document.querySelector(link.getAttribute("href")))
     .filter(Boolean);
@@ -39,6 +42,33 @@ if (currentYear) {
     currentYear.textContent = new Date().getFullYear();
 }
 
+let scrollTicking = false;
+
+const updateScrollState = () => {
+    const scrollableHeight = documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
+    const boundedProgress = Math.min(Math.max(progress, 0), 1);
+
+    documentElement.style.setProperty("--scroll-progress", boundedProgress.toFixed(4));
+
+    if (siteHeader) {
+        siteHeader.classList.toggle("is-scrolled", window.scrollY > 10);
+    }
+
+    scrollTicking = false;
+};
+
+const requestScrollUpdate = () => {
+    if (scrollTicking) return;
+
+    scrollTicking = true;
+    window.requestAnimationFrame(updateScrollState);
+};
+
+window.addEventListener("scroll", requestScrollUpdate, { passive: true });
+window.addEventListener("resize", requestScrollUpdate);
+updateScrollState();
+
 if (themeToggle) {
     setTheme(document.documentElement.dataset.theme || getSystemTheme(), false);
 
@@ -47,6 +77,18 @@ if (themeToggle) {
         setTheme(currentTheme === "dark" ? "light" : "dark");
     });
 }
+
+pressableElements.forEach((element) => {
+    element.addEventListener("pointerdown", () => {
+        element.classList.remove("is-pressed");
+        void element.offsetWidth;
+        element.classList.add("is-pressed");
+    });
+
+    element.addEventListener("animationend", () => {
+        element.classList.remove("is-pressed");
+    });
+});
 
 if (!prefersReducedMotion && "IntersectionObserver" in window) {
     const revealGroups = [

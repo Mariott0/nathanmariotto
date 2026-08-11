@@ -68,6 +68,8 @@ nathanmariotto/
 +-- jornada/
 |   +-- index.html           # Página do case Jornada do Conhecimento
 |   +-- jornada.css          # Estilos específicos do case
++-- spacewar/
+|   +-- index.html           # Jogo Space War disponível em /spacewar
 +-- .gitignore               # Arquivos ignorados pelo Git
 +-- CNAME                    # Domínio customizado
 +-- index.html               # Página principal
@@ -95,7 +97,7 @@ nathanmariotto/
 
 - **[Jornada do Conhecimento](https://nathanmariotto.com.br/jornada):** TCC e maior projeto que desenvolvi até agora, com foco em planejamento, levantamento de requisitos, organização de funcionalidades, jogo educacional, painel do professor, API e documentação. Primeira release beta disponível em [v0.1.0-beta](https://github.com/Leonardo-frachine/jogo_jornada_conhecimento/releases/tag/v0.1.0-beta).
 - **Playlist Downloader Pro:** Ferramenta em Python para download e organização de playlists, com foco em automação e manipulação de arquivos.
-- **[Space War Game NHR](https://github.com/Mariott0/spacewargamenhr):** Jogo web desenvolvido para praticar lógica, eventos, interação visual e experiência no navegador.
+- **[Space War Game NHR](https://nathanmariotto.com.br/spacewar):** Jogo web em HTML Canvas disponível para jogar direto no site.
 - **ClinicManager:** Aplicação para gestão de clínica.
 - **Backend módulo agendamento:** Back-end voltado a regras e fluxos de agendamento.
 - **Ciência de Dados:** Estudos com Python para análise e visualização de dados.

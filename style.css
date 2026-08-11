@@ -96,6 +96,10 @@ html {
     color-scheme: light;
 }
 
+section[id] {
+    scroll-margin-top: 96px;
+}
+
 body {
     margin: 0;
     background: var(--body-background);
@@ -103,6 +107,21 @@ body {
     font-family: "Inter", Arial, sans-serif;
     line-height: 1.6;
     transition: background 180ms ease, color 180ms ease;
+}
+
+body::before {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 60;
+    height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--coral), var(--amber));
+    content: "";
+    pointer-events: none;
+    transform: scaleX(var(--scroll-progress, 0));
+    transform-origin: left;
+    transition: transform 90ms linear;
 }
 
 img {
@@ -146,6 +165,26 @@ a {
     }
 }
 
+@keyframes ambientFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes quickPress {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.97);
+    }
+}
+
 .reveal {
     opacity: 0;
     transform: translateY(24px);
@@ -173,7 +212,15 @@ a {
     background: var(--header-background);
     border-bottom: 1px solid var(--header-border);
     backdrop-filter: blur(18px);
-    transition: background 180ms ease, border-color 180ms ease;
+    transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, padding 180ms ease;
+}
+
+.site-header.is-scrolled {
+    box-shadow: 0 14px 34px rgba(20, 31, 45, 0.12);
+}
+
+html[data-theme="dark"] .site-header.is-scrolled {
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.34);
 }
 
 .brand {
@@ -270,8 +317,10 @@ html[data-theme="dark"] .theme-icon-moon {
 }
 
 .main-nav a {
+    display: inline-flex;
     position: relative;
     padding: 8px 0;
+    transition: color 180ms ease, transform 180ms ease;
 }
 
 .main-nav a::after {
@@ -290,6 +339,7 @@ html[data-theme="dark"] .theme-icon-moon {
 .main-nav a:hover,
 .main-nav a.is-active {
     color: var(--ink);
+    transform: translateY(-1px);
 }
 
 .main-nav a:hover::after,
@@ -394,21 +444,53 @@ html[data-theme="dark"] .theme-icon-moon {
 }
 
 .button {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     min-height: 48px;
     padding: 0 20px;
+    overflow: hidden;
     border: 1px solid transparent;
     font-weight: 800;
     cursor: pointer;
-    transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.button::before {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 18%, rgba(255, 255, 255, 0.24) 48%, transparent 78%);
+    content: "";
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-110%);
+    transition: opacity 180ms ease, transform 520ms ease;
+}
+
+.button:hover::before {
+    opacity: 1;
+    transform: translateX(110%);
+}
+
+.button i {
+    transition: transform 180ms ease;
 }
 
 .button:hover {
     transform: translateY(-2px);
     box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+}
+
+.button:hover i {
+    transform: translateX(2px);
+}
+
+.button.is-pressed,
+.contact-links a.is-pressed,
+.theme-toggle.is-pressed {
+    animation: quickPress 240ms ease;
 }
 
 .button.primary {
@@ -473,6 +555,7 @@ html[data-theme="dark"] .theme-icon-moon {
     border: 5px solid transparent;
     border-radius: 50%;
     box-shadow: 0 30px 70px rgba(0, 0, 0, 0.34);
+    animation: ambientFloat 7s ease-in-out 1200ms infinite;
 }
 
 .portrait-frame::after {
@@ -636,6 +719,11 @@ html[data-theme="dark"] .theme-icon-moon {
     color: #ffffff;
     background: var(--teal);
     font-size: 1.35rem;
+    transition: transform 180ms ease;
+}
+
+.expertise-card:hover i {
+    transform: rotate(-4deg) scale(1.06);
 }
 
 .expertise-card:nth-child(2) i {
@@ -804,17 +892,37 @@ html[data-theme="dark"] .theme-icon-moon {
 }
 
 .project-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     min-height: 310px;
     padding: 26px;
+    overflow: hidden;
     border-top: 5px solid var(--teal);
     transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.project-card::after {
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 60%;
+    height: 5px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.72), transparent);
+    content: "";
+    opacity: 0;
+    pointer-events: none;
+    transition: left 640ms ease, opacity 180ms ease;
 }
 
 .project-card:hover {
     box-shadow: 0 18px 42px rgba(26, 41, 58, 0.13);
     transform: translateY(-6px);
+}
+
+.project-card:hover::after {
+    left: 100%;
+    opacity: 1;
 }
 
 .project-card.featured {
@@ -875,6 +983,12 @@ html[data-theme="dark"] .theme-icon-moon {
     margin-top: auto;
     color: var(--teal);
     font-weight: 900;
+    transition: color 180ms ease, transform 180ms ease;
+}
+
+.project-card a:hover {
+    color: var(--coral);
+    transform: translateX(3px);
 }
 
 .project-card a::after {
@@ -953,6 +1067,7 @@ html[data-theme="dark"] .theme-icon-moon {
 }
 
 .contact-links a {
+    position: relative;
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -963,12 +1078,13 @@ html[data-theme="dark"] .theme-icon-moon {
     background: var(--contact-link-background);
     border: 1px solid var(--contact-link-border);
     font-weight: 800;
-    transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
 .contact-links a:hover {
     background: var(--contact-link-hover);
     border-color: rgba(20, 184, 166, 0.72);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
 }
 
