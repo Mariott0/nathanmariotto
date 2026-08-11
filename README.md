@@ -13,6 +13,7 @@ Portfólio moderno e responsivo desenvolvido com HTML, CSS e JavaScript. O site 
 - **Perfil profissional:** Apresentação com nome completo, área de atuação e resumo objetivo.
 - **Links sociais:** Acesso rápido para LinkedIn, GitHub, Email e WhatsApp.
 - **Tema claro/escuro:** Alternância de tema com preferência salva no navegador.
+- **Microanimações profissionais:** Entrada suave no hero, revelação de seções ao rolar e hovers refinados.
 - **Seção de competências:** Destaque para QA manual e automatizado, APIs, sistemas legados, front-end, mobile, rastreabilidade e metodologias ágeis.
 - **Experiência profissional:** Histórico com atuação como Analista de Testes na Maxicon Sistemas e Técnico de TI no Escritório Líder.
 - **Formação acadêmica:** Bacharelado em Engenharia de Software pelo Centro Universitário FAG.
@@ -20,7 +21,7 @@ Portfólio moderno e responsivo desenvolvido com HTML, CSS e JavaScript. O site 
 - **Projeto principal:** Destaque para o TCC Jornada do Conhecimento, meu maior projeto desenvolvido até agora.
 - **Contato:** Links diretos para Email, WhatsApp, LinkedIn e GitHub.
 - **Design responsivo:** Interface adaptada para desktop, tablet e mobile.
-- **Animações suaves:** Efeitos de hover, transições e navegação com destaque automático.
+- **Animações suaves:** Efeitos de hover, entrada do hero, revelação progressiva de cards e navegação com destaque automático.
 - **SEO básico:** Meta tags de descrição, Open Graph e tema configuradas no HTML.
 - **Arquivos privados ignorados:** PDFs exportados localmente ficam fora do versionamento via `.gitignore`.
 
@@ -106,6 +107,7 @@ nathanmariotto/
 - **Layout responsivo:** Estrutura com CSS Grid e Flexbox.
 - **Cards informativos:** Organização visual para competências, projetos, formação e ferramentas.
 - **Navegação fixa:** Menu superior com links para as principais seções.
+- **Acessibilidade:** Animações respeitam `prefers-reduced-motion`.
 
 ## Como Usar
 
