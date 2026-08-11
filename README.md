@@ -16,6 +16,7 @@ Portfólio moderno e responsivo desenvolvido com HTML, CSS e JavaScript. O site 
 - **Experiência profissional:** Histórico com atuação como Analista de Testes na Maxicon Sistemas e Técnico de TI no Escritório Líder.
 - **Formação acadêmica:** Bacharelado em Engenharia de Software pelo Centro Universitário FAG.
 - **Projetos:** Cards com projetos e estudos publicados no GitHub.
+- **Projeto principal:** Destaque para o TCC Jornada do Conhecimento, meu maior projeto desenvolvido até agora.
 - **Contato:** Formulário que abre o aplicativo de email com mensagem preenchida.
 - **Design responsivo:** Interface adaptada para desktop, tablet e mobile.
 - **Animações suaves:** Efeitos de hover, transições e navegação com destaque automático.
@@ -85,6 +86,9 @@ nathanmariotto/
 
 ## Projetos em Destaque
 
+- **[Jornada do Conhecimento](https://github.com/Mariott0/jornada-do-conhecimento):** TCC e maior projeto que desenvolvi até agora, com foco em planejamento, levantamento de requisitos, organização de funcionalidades e construção de uma solução completa.
+- **Playlist Downloader Pro:** Ferramenta em Python para download e organização de playlists, com foco em automação e manipulação de arquivos.
+- **[Space War Game NHR](https://github.com/Mariott0/spacewargamenhr):** Jogo web desenvolvido para praticar lógica, eventos, interação visual e experiência no navegador.
 - **ClinicManager:** Aplicação para gestão de clínica.
 - **Backend módulo agendamento:** Back-end voltado a regras e fluxos de agendamento.
 - **Ciência de Dados:** Estudos com Python para análise e visualização de dados.

@@ -623,6 +623,18 @@ a {
     content: "->";
 }
 
+.project-note {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin-top: auto;
+    padding: 8px 10px;
+    color: var(--muted);
+    background: var(--surface-2);
+    font-size: 0.85rem;
+    font-weight: 900;
+}
+
 .toolkit {
     background: #ffffff;
 }
