@@ -56,6 +56,14 @@ if (!prefersReducedMotion && "IntersectionObserver" in window) {
         ".timeline-item",
         ".education-card",
         ".project-card",
+        ".case-card",
+        ".solution-card",
+        ".process-step",
+        ".tech-pill",
+        ".artifact-card",
+        ".case-gallery",
+        ".result-panel",
+        ".team-panel",
         ".tool-columns > div",
         ".contact-copy"
     ];

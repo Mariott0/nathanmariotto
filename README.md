@@ -18,7 +18,7 @@ Portfólio moderno e responsivo desenvolvido com HTML, CSS e JavaScript. O site 
 - **Experiência profissional:** Histórico com atuação como Analista de Testes na Maxicon Sistemas e Técnico de TI no Escritório Líder.
 - **Formação acadêmica:** Bacharelado em Engenharia de Software pelo Centro Universitário FAG.
 - **Projetos:** Cards com projetos e estudos publicados no GitHub.
-- **Projeto principal:** Destaque para o TCC Jornada do Conhecimento, meu maior projeto desenvolvido até agora.
+- **Projeto principal:** Destaque para o TCC Jornada do Conhecimento, com página própria em `/jornada` e release beta para download.
 - **Contato:** Links diretos para Email, WhatsApp, LinkedIn e GitHub.
 - **Design responsivo:** Interface adaptada para desktop, tablet e mobile.
 - **Animações suaves:** Efeitos de hover, entrada do hero, revelação progressiva de cards e navegação com destaque automático.
@@ -64,6 +64,10 @@ nathanmariotto/
 +-- images/
 |   +-- eu.jpeg              # Foto usada no portfólio
 |   +-- favicon.svg          # Ícone exibido na aba do navegador
+|   +-- jornada/             # Imagens otimizadas do projeto Jornada
++-- jornada/
+|   +-- index.html           # Página do case Jornada do Conhecimento
+|   +-- jornada.css          # Estilos específicos do case
 +-- .gitignore               # Arquivos ignorados pelo Git
 +-- CNAME                    # Domínio customizado
 +-- index.html               # Página principal
@@ -89,7 +93,7 @@ nathanmariotto/
 
 ## Projetos em Destaque
 
-- **[Jornada do Conhecimento](https://github.com/Leonardo-frachine/jogo_jornada_conhecimento):** TCC e maior projeto que desenvolvi até agora, com foco em planejamento, levantamento de requisitos, organização de funcionalidades e construção de uma solução completa.
+- **[Jornada do Conhecimento](https://nathanmariotto.com.br/jornada):** TCC e maior projeto que desenvolvi até agora, com foco em planejamento, levantamento de requisitos, organização de funcionalidades, jogo educacional, painel do professor, API e documentação. Primeira release beta disponível em [v0.1.0-beta](https://github.com/Leonardo-frachine/jogo_jornada_conhecimento/releases/tag/v0.1.0-beta).
 - **Playlist Downloader Pro:** Ferramenta em Python para download e organização de playlists, com foco em automação e manipulação de arquivos.
 - **[Space War Game NHR](https://github.com/Mariott0/spacewargamenhr):** Jogo web desenvolvido para praticar lógica, eventos, interação visual e experiência no navegador.
 - **ClinicManager:** Aplicação para gestão de clínica.

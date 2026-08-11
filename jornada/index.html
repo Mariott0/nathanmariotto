@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Case do projeto Jornada do Conhecimento, TCC de Nathan Henrique Mariotto Ritz: jogo educacional em Godot com API NestJS, painel do professor, perguntas, relatórios e primeira release beta disponível."
+    />
+    <meta name="theme-color" content="#101820" />
+    <meta
+      property="og:title"
+      content="Jornada do Conhecimento | Case de Projeto"
+    />
+    <meta
+      property="og:description"
+      content="Portfólio do TCC Jornada do Conhecimento, jogo educacional gamificado com tabuleiro, perguntas, XP, painel do professor, API e release v0.1.0-beta."
+    />
+    <meta property="og:type" content="website" />
+    <title>Jornada do Conhecimento | Nathan Mariotto</title>
+
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem("portfolio-theme");
+          const systemTheme =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          document.documentElement.dataset.theme = savedTheme || systemTheme;
+        } catch {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="jornada.css" />
+  </head>
+  <body class="case-page">
+    <header class="site-header">
+      <a class="brand" href="../" aria-label="Voltar ao portfólio principal">
+        <span class="brand-name">Nathan Mariotto</span>
+      </a>
+
+      <div class="header-actions">
+        <nav class="main-nav" aria-label="Navegação do case">
+          <a href="#visao-geral">Visão geral</a>
+          <a href="#solucao">Solução</a>
+          <a href="#processo">Processo</a>
+          <a href="#tecnologias">Tecnologias</a>
+          <a href="#resultado">Resultado</a>
+        </nav>
+
+        <button class="theme-toggle" type="button" id="themeToggle" aria-label="Alternar tema">
+          <i class="bi bi-sun-fill theme-icon-sun" aria-hidden="true"></i>
+          <i class="bi bi-moon-stars-fill theme-icon-moon" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="case-hero" id="inicio">
+        <div class="case-hero-content">
+          <img
+            class="case-logo"
+            src="../images/jornada/logo-jornada.webp"
+            alt="Logo Jornada do Conhecimento"
+          />
+          <p class="eyebrow">TCC • Godot • Educação gamificada</p>
+          <h1>Jornada do Conhecimento</h1>
+          <p class="case-lead">
+            Jogo educacional em formato de tabuleiro digital, criado para tornar
+            o aprendizado mais interativo e dar ao professor uma visão clara do
+            desempenho dos alunos.
+          </p>
+
+          <div class="case-actions">
+            <a
+              class="button primary"
+              href="https://github.com/Leonardo-frachine/jogo_jornada_conhecimento"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bi bi-github" aria-hidden="true"></i>
+              Ver repositório
+            </a>
+            <a
+              class="button secondary"
+              href="https://github.com/Leonardo-frachine/jogo_jornada_conhecimento/releases/download/v0.1.0-beta/Jornada.do.conhecimento.exe"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bi bi-download" aria-hidden="true"></i>
+              Baixar v0.1.0-beta
+            </a>
+            <a
+              class="button secondary"
+              href="https://docs.google.com/presentation/d/1prNslQZFVxaU26V2HwXLBW-e2A2WvyqLVdEKv4Kgrfg/edit?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bi bi-easel2-fill" aria-hidden="true"></i>
+              Apresentação
+            </a>
+          </div>
+
+          <dl class="case-facts" aria-label="Resumo do projeto">
+            <div>
+              <dt>Status</dt>
+              <dd>Beta v0.1.0</dd>
+            </div>
+            <div>
+              <dt>Formato</dt>
+              <dd>Jogo educacional</dd>
+            </div>
+            <div>
+              <dt>Equipe</dt>
+              <dd>4 integrantes</dd>
+            </div>
+            <div>
+              <dt>Entrega</dt>
+              <dd>Release disponível</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="case-hero-visual" aria-label="Prévia visual do jogo">
+          <div class="case-screen">
+            <img
+              src="../images/jornada/tabuleiro.webp"
+              alt="Tabuleiro do jogo Jornada do Conhecimento"
+            />
+          </div>
+          <div class="game-loop">
+            <span>Core loop</span>
+            <strong>Dado → Tabuleiro → Pergunta → XP</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-band" id="visao-geral">
+        <div class="case-section-heading">
+          <p class="eyebrow">Visão geral</p>
+          <h2>Meu maior projeto até agora, com produto, jogo, API e documentação.</h2>
+          <p>
+            A proposta nasceu como TCC e evoluiu para uma solução completa:
+            experiência do aluno, área do professor, importação de perguntas,
+            relatórios, regras de jogo e integração com serviços de back-end.
+          </p>
+        </div>
+
+        <div class="overview-grid">
+          <article class="case-card">
+            <i class="bi bi-bullseye" aria-hidden="true"></i>
+            <h3>Problema</h3>
+            <p>
+              Tornar atividades de estudo mais envolventes e facilitar a leitura
+              do desempenho dos alunos por professores.
+            </p>
+          </article>
+          <article class="case-card">
+            <i class="bi bi-controller" aria-hidden="true"></i>
+            <h3>Solução</h3>
+            <p>
+              Um tabuleiro gamificado onde o aluno avança respondendo perguntas,
+              acumula XP e recebe feedback ao longo da jornada.
+            </p>
+          </article>
+          <article class="case-card">
+            <i class="bi bi-clipboard2-check" aria-hidden="true"></i>
+            <h3>Minha atuação</h3>
+            <p>
+              Apoio em planejamento, levantamento de requisitos, organização de
+              funcionalidades, testes, validação de fluxos e documentação.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section split-layout" id="solucao">
+        <div class="case-section-heading align-left">
+          <p class="eyebrow">Solução</p>
+          <h2>Dois fluxos principais: aluno jogando e professor acompanhando.</h2>
+          <p>
+            O projeto foi pensado para conectar motivação no aprendizado com
+            gestão de conteúdo e análise de evolução.
+          </p>
+        </div>
+
+        <div class="solution-columns">
+          <article class="solution-card">
+            <div class="solution-icon">
+              <i class="bi bi-person-walking" aria-hidden="true"></i>
+            </div>
+            <h3>Experiência do aluno</h3>
+            <ul>
+              <li>Seleção de perfil e entrada no jogo.</li>
+              <li>Rolagem de dado e avanço pelo tabuleiro.</li>
+              <li>Perguntas com dificuldade progressiva.</li>
+              <li>Feedback de resposta, pontuação e resultado final.</li>
+            </ul>
+          </article>
+
+          <article class="solution-card">
+            <div class="solution-icon">
+              <i class="bi bi-mortarboard-fill" aria-hidden="true"></i>
+            </div>
+            <h3>Painel do professor</h3>
+            <ul>
+              <li>Gerenciamento de perguntas e conteúdos.</li>
+              <li>Importação por CSV ou Excel.</li>
+              <li>Dashboard, ranking e acompanhamento dos alunos.</li>
+              <li>Geração de perguntas com IA e relatórios de desempenho.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-gallery" aria-label="Identidade visual do projeto">
+        <img
+          class="gallery-bg"
+          src="../images/jornada/fundo-game.webp"
+          alt="Cenário visual do jogo Jornada do Conhecimento"
+        />
+        <div class="gallery-copy">
+          <p class="eyebrow">Identidade visual</p>
+          <h2>Visual lúdico, mas organizado para uma experiência educacional.</h2>
+          <p>
+            A interface usa elementos escolares, cores de tabuleiro e feedbacks
+            visuais para transformar conteúdo em progresso perceptível.
+          </p>
+        </div>
+        <img
+          class="gallery-character"
+          src="../images/jornada/personagem.webp"
+          alt="Personagem do jogo Jornada do Conhecimento"
+        />
+      </section>
+
+      <section class="case-band" id="processo">
+        <div class="case-section-heading">
+          <p class="eyebrow">Processo</p>
+          <h2>Organização do projeto do requisito até a validação.</h2>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-step">
+            <span>01</span>
+            <h3>Descoberta e requisitos</h3>
+            <p>
+              Definição do problema, público, regras de negócio, fluxo do aluno
+              e necessidades do professor.
+            </p>
+          </article>
+          <article class="process-step">
+            <span>02</span>
+            <h3>Planejamento e backlog</h3>
+            <p>
+              Quebra do escopo em funcionalidades, priorização, organização em
+              Trello e acompanhamento das entregas.
+            </p>
+          </article>
+          <article class="process-step">
+            <span>03</span>
+            <h3>Construção do jogo</h3>
+            <p>
+              Estrutura das cenas no Godot, fluxo de navegação, tabuleiro,
+              perguntas, HUD, configurações e tela de resultado.
+            </p>
+          </article>
+          <article class="process-step">
+            <span>04</span>
+            <h3>API e dados</h3>
+            <p>
+              Back-end para perguntas, alunos, professores, relatórios,
+              importação de planilhas e persistência de informações.
+            </p>
+          </article>
+          <article class="process-step">
+            <span>05</span>
+            <h3>QA e refinamento</h3>
+            <p>
+              Validação dos fluxos, correção de inconsistências, testes de
+              interface e revisão da experiência em tempo de execução.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section" id="tecnologias">
+        <div class="case-section-heading">
+          <p class="eyebrow">Tecnologias</p>
+          <h2>Stack usada para unir jogo, API, dados e gestão de conteúdo.</h2>
+        </div>
+
+        <div class="tech-grid">
+          <span class="tech-pill">Godot Engine 4.6</span>
+          <span class="tech-pill">GDScript</span>
+          <span class="tech-pill">NestJS</span>
+          <span class="tech-pill">TypeScript</span>
+          <span class="tech-pill">TypeORM</span>
+          <span class="tech-pill">PostgreSQL</span>
+          <span class="tech-pill">SQLite</span>
+          <span class="tech-pill">CSV e Excel</span>
+          <span class="tech-pill">Google GenAI</span>
+          <span class="tech-pill">GitHub</span>
+          <span class="tech-pill">Trello</span>
+          <span class="tech-pill">Kanban e Scrum</span>
+        </div>
+
+        <div class="artifact-grid">
+          <article class="artifact-card">
+            <h3>Fluxo principal</h3>
+            <p>
+              Seleção de perfil, tela inicial, carregamento, tabuleiro,
+              perguntas e encerramento com resultado.
+            </p>
+          </article>
+          <article class="artifact-card">
+            <h3>Fluxo professor</h3>
+            <p>
+              Acesso do professor, painel administrativo, banco de perguntas,
+              dashboard, ranking e relatórios.
+            </p>
+          </article>
+          <article class="artifact-card">
+            <h3>Dados e conteúdo</h3>
+            <p>
+              Importação de perguntas por planilha, alternativas, dificuldade,
+              pontuação, tempo limite e resposta correta.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="result-section" id="resultado">
+        <div class="result-panel">
+          <p class="eyebrow">Resultado</p>
+          <h2>Um TCC com escopo real de produto.</h2>
+          <p>
+            O Jornada do Conhecimento reúne game design, requisitos, qualidade,
+            back-end, persistência de dados, painel administrativo e documentação
+            técnica. É o projeto que melhor representa minha evolução em
+            planejamento, colaboração e entrega de software. A primeira release
+            beta, <strong>v0.1.0-beta</strong>, já está disponível para download
+            pelo GitHub.
+          </p>
+
+          <div class="result-actions">
+            <a
+              class="button primary"
+              href="https://github.com/Leonardo-frachine/jogo_jornada_conhecimento"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bi bi-code-slash" aria-hidden="true"></i>
+              Abrir código
+            </a>
+            <a
+              class="button secondary"
+              href="https://github.com/Leonardo-frachine/jogo_jornada_conhecimento/releases/download/v0.1.0-beta/Jornada.do.conhecimento.exe"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bi bi-download" aria-hidden="true"></i>
+              Baixar jogo
+            </a>
+            <a
+              class="button secondary"
+              href="https://github.com/Leonardo-frachine/jogo_jornada_conhecimento/releases/tag/v0.1.0-beta"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+              Ver release
+            </a>
+          </div>
+        </div>
+
+        <div class="team-panel">
+          <h3>Equipe</h3>
+          <ul>
+            <li>Guilherme Poit Vasconcelos</li>
+            <li>Gustavo Henrique de Oliveira</li>
+            <li>Leonardo Dias Frachine</li>
+            <li>Nathan Henrique Mariotto Ritz</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Jornada do Conhecimento • Case de projeto</p>
+      <a href="../">Voltar ao portfólio</a>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
