@@ -1,39 +1,49 @@
-document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("lrgpAJHTzMskRbUu3"); 
-    
-    document.getElementById("meuFormulario").addEventListener("submit", function (event) {
-        event.preventDefault(); 
+const currentYear = document.querySelector("#currentYear");
+const contactForm = document.querySelector("#contactForm");
+const formStatus = document.querySelector("#formStatus");
+const navLinks = document.querySelectorAll(".main-nav a");
+const sections = [...navLinks]
+    .map((link) => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
 
-        const statusMensagem = document.getElementById("statusMensagem");
+if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+}
 
-        const templateParams = {
-            nome: document.getElementById("nome").value,
-            email: document.getElementById("email").value,
-            mensagem: document.getElementById("mensagem").value
-        };
+if (contactForm && formStatus) {
+    contactForm.addEventListener("submit", (event) => {
+        event.preventDefault();
 
-    
-        emailjs.send("service_wi9ax7q", "template_c4d492n", templateParams)
-            .then(function (response) {
-                console.log("E-mail enviado com sucesso!", response);
-                statusMensagem.innerHTML = "Mensagem enviada com sucesso!";
-                statusMensagem.style.color = "green";
-                document.getElementById("meuFormulario").reset(); 
-            }, function (error) {
-                console.error("Erro ao enviar o e-mail:", error);
-                statusMensagem.innerHTML = "Erro ao enviar mensagem. Tente novamente.";
-                statusMensagem.style.color = "red";
-            });
+        const formData = new FormData(contactForm);
+        const name = formData.get("name")?.toString().trim() || "";
+        const email = formData.get("email")?.toString().trim() || "";
+        const message = formData.get("message")?.toString().trim() || "";
+
+        const subject = encodeURIComponent(`Contato pelo portfólio - ${name}`);
+        const body = encodeURIComponent(`${message}\n\nNome: ${name}\nEmail: ${email}`);
+
+        window.location.href = `mailto:loucosgamer124@gmail.com?subject=${subject}&body=${body}`;
+        formStatus.textContent = "Abrindo seu aplicativo de email para enviar a mensagem.";
+        contactForm.reset();
     });
-});
+}
 
+if ("IntersectionObserver" in window && sections.length) {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
 
+                navLinks.forEach((link) => {
+                    link.classList.toggle("is-active", link.getAttribute("href") === `#${entry.target.id}`);
+                });
+            });
+        },
+        {
+            rootMargin: "-35% 0px -55% 0px",
+            threshold: 0.01
+        }
+    );
 
-
-
-/*
-EmailJS --->
-key public: lrgpAJHTzMskRbUu3
-Service ID: service_wi9ax7q
-Template ID: template_c4d492n*/
-
+    sections.forEach((section) => observer.observe(section));
+}
