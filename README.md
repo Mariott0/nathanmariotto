@@ -89,7 +89,7 @@ nathanmariotto/
 
 ## Projetos em Destaque
 
-- **[Jornada do Conhecimento](https://github.com/Mariott0/jornada-do-conhecimento):** TCC e maior projeto que desenvolvi até agora, com foco em planejamento, levantamento de requisitos, organização de funcionalidades e construção de uma solução completa.
+- **[Jornada do Conhecimento](https://github.com/Leonardo-frachine/jogo_jornada_conhecimento):** TCC e maior projeto que desenvolvi até agora, com foco em planejamento, levantamento de requisitos, organização de funcionalidades e construção de uma solução completa.
 - **Playlist Downloader Pro:** Ferramenta em Python para download e organização de playlists, com foco em automação e manipulação de arquivos.
 - **[Space War Game NHR](https://github.com/Mariott0/spacewargamenhr):** Jogo web desenvolvido para praticar lógica, eventos, interação visual e experiência no navegador.
 - **ClinicManager:** Aplicação para gestão de clínica.
