@@ -3,453 +3,155 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Página de apresentação do Jornada do Conhecimento: jogo educacional em Godot com tabuleiro gamificado, perguntas, XP, painel do professor, relatórios e nova release beta disponível."
-    />
-    <meta name="theme-color" content="#101820" />
-    <meta
-      property="og:title"
-      content="Jornada do Conhecimento | Jogo Educacional"
-    />
-    <meta
-      property="og:description"
-      content="Conheça o Jornada do Conhecimento, um jogo educacional gamificado com tabuleiro, perguntas, XP, painel do professor, API e release v0.3.1 Beta."
-    />
+    <meta name="description" content="Jornada do Conhecimento: jogo educacional em Godot que conecta tabuleiro, perguntas e XP ao acompanhamento do professor. Conheça o projeto e baixe a v0.3.1 Beta." />
+    <meta name="theme-color" content="#0b0e11" />
+    <meta property="og:title" content="Jornada do Conhecimento | Nathan Mariotto" />
+    <meta property="og:description" content="Aprender também é uma aventura. Conheça o jogo educacional com tabuleiro, perguntas, XP e painel do professor." />
     <meta property="og:type" content="website" />
-    <title>Jornada do Conhecimento | Jogo Educacional</title>
-
-    <script>
-      (() => {
-        try {
-          const savedTheme = localStorage.getItem("portfolio-theme");
-          const systemTheme =
-            window.matchMedia &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches
-              ? "dark"
-              : "light";
-          document.documentElement.dataset.theme = savedTheme || systemTheme;
-        } catch {
-          document.documentElement.dataset.theme = "light";
-        }
-      })();
-    </script>
-
+    <meta property="og:image" content="../images/jornada/tabuleiro.webp" />
+    <title>Jornada do Conhecimento | Nathan Mariotto</title>
+    <script src="../theme-init.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="jornada.css" />
+    <script src="../script.js" defer></script>
+    <script src="jornada.js" defer></script>
   </head>
-  <body class="case-page">
+  <body class="case-page jornada-page">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <header class="site-header">
-      <a class="brand" href="../" aria-label="Voltar ao portfólio principal">
-        <span class="brand-name">Nathan Mariotto</span>
+      <a class="brand" href="../" aria-label="Nathan Mariotto — início do portfólio">
+        <span class="brand-mark" aria-hidden="true">NM</span>
+        <span class="brand-name">Nathan Mariotto<span aria-hidden="true">.</span></span>
       </a>
-
       <div class="header-actions">
-        <nav class="main-nav" aria-label="Navegação do projeto">
-          <a href="#visao-geral">Visão geral</a>
-          <a href="#solucao">Solução</a>
-          <a href="#processo">Processo</a>
-          <a href="#tecnologias">Tecnologias</a>
-          <a href="#resultado">Resultado</a>
+        <nav class="main-nav" id="mainNav" aria-label="Navegação do projeto">
+          <a href="../">Portfólio</a>
+          <a href="#visao-geral">O projeto</a>
+          <a href="#apresentacao">Apresentação</a>
+          <a href="../spacewar/">Space War <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
         </nav>
-
-        <button
-          class="theme-toggle"
-          type="button"
-          id="themeToggle"
-          aria-label="Alternar tema"
-        >
+        <button class="theme-toggle" type="button" id="themeToggle" aria-label="Alternar tema">
           <i class="bi bi-sun-fill theme-icon-sun" aria-hidden="true"></i>
-          <i
-            class="bi bi-moon-stars-fill theme-icon-moon"
-            aria-hidden="true"
-          ></i>
+          <i class="bi bi-moon-stars-fill theme-icon-moon" aria-hidden="true"></i>
         </button>
+        <button class="menu-toggle" type="button" id="menuToggle" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menu"><span></span><span></span></button>
       </div>
     </header>
 
-    <main>
-      <section class="case-hero" id="inicio">
-        <div class="case-hero-content">
-          <img
-            class="case-logo"
-            src="../images/jornada/logo-jornada.webp"
-            alt="Logo Jornada do Conhecimento"
-          />
-          <p class="eyebrow">Jogo educacional • Godot • Beta v0.3.1</p>
-          <h1>Jornada do Conhecimento</h1>
-          <p class="case-lead">
-            Jogo educacional em formato de tabuleiro digital, criado para tornar
-            o aprendizado mais interativo e dar ao professor uma visão clara do
-            desempenho dos alunos.
-          </p>
-
-          <div class="case-actions">
-            <a
-              class="button primary"
-              href="https://github.com/Leonardo-frachine/jogo_jornada_conhecimento"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="bi bi-github" aria-hidden="true"></i>
-              Ver repositório
-            </a>
-            <a
-              class="button secondary"
-              href="https://github.com/Leonardo-frachine/jogo_jornada_conhecimento/releases/download/v0.3.1-beta/Jornada.do.conhecimento.exe"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="bi bi-download" aria-hidden="true"></i>
-              Baixar v0.3.1 Beta
-            </a>
-            <a class="button secondary" href="#apresentacao">
-              <i class="bi bi-easel2-fill" aria-hidden="true"></i>
-              Apresentação
-            </a>
+    <main id="conteudo">
+      <section class="case-hero container" id="inicio" aria-labelledby="project-title">
+        <div class="case-breadcrumb" data-reveal><a href="../#projetos"><i class="bi bi-arrow-left" aria-hidden="true"></i> Todos os projetos</a><span>Jogo educacional / 01</span></div>
+        <div class="case-hero-grid">
+          <div class="case-hero-content" data-reveal>
+            <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Godot · Educação · v0.3.1 Beta</p>
+            <h1 id="project-title">Jornada do <span>Conhecimento.</span></h1>
+            <p class="case-tagline">Aprender também é uma aventura.</p>
+            <p class="case-lead">Um tabuleiro digital que transforma perguntas em desafios, conhecimento em XP e cada partida em uma nova oportunidade de aprender.</p>
+            <div class="case-actions">
+              <a class="button primary" href="https://github.com/Leonardo-frachine/jogo_jornada_conhecimento/releases/download/v0.3.1-beta/Jornada.do.conhecimento.exe" target="_blank" rel="noopener noreferrer">Baixar versão beta <i class="bi bi-download" aria-hidden="true"></i></a>
+              <a class="button secondary" href="https://github.com/Leonardo-frachine/jogo_jornada_conhecimento" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i> Ver código</a>
+            </div>
+            <p class="download-note">Windows · Download pelo GitHub · v0.3.1 Beta</p>
           </div>
-
-          <dl class="case-facts" aria-label="Resumo do projeto">
-            <div>
-              <dt>Status</dt>
-              <dd>Beta v0.3.1</dd>
+          <div class="case-hero-visual" data-reveal>
+            <div class="case-screen">
+              <div class="screen-toolbar"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>Jornada / prévia do tabuleiro</span><i class="bi bi-controller" aria-hidden="true"></i></div>
+              <div class="screen-image">
+                <img src="../images/jornada/tabuleiro.webp" width="1480" height="987" alt="Arte do tabuleiro: um caminho colorido entre livros, lápis e desafios, do início à chegada." fetchpriority="high" />
+                <button class="preview-expand" id="openPreview" type="button" aria-haspopup="dialog" aria-controls="boardPreview" hidden><i class="bi bi-arrows-fullscreen" aria-hidden="true"></i><span>Ampliar prévia</span></button>
+              </div>
+              <div class="game-loop" aria-label="Ciclo principal do jogo"><span>Dado</span><i class="bi bi-arrow-right" aria-hidden="true"></i><span>Tabuleiro</span><i class="bi bi-arrow-right" aria-hidden="true"></i><span>Pergunta</span><i class="bi bi-arrow-right" aria-hidden="true"></i><strong>+ XP</strong></div>
             </div>
-            <div>
-              <dt>Formato</dt>
-              <dd>Jogo educacional</dd>
-            </div>
-            <div>
-              <dt>Equipe</dt>
-              <dd>4 integrantes</dd>
-            </div>
-            <div>
-              <dt>Entrega</dt>
-              <dd>Release disponível</dd>
-            </div>
-          </dl>
-        </div>
-
-        <div class="case-hero-visual" aria-label="Prévia visual do jogo">
-          <div class="case-screen">
-            <img
-              src="../images/jornada/tabuleiro.webp"
-              alt="Tabuleiro do jogo Jornada do Conhecimento"
-            />
-          </div>
-          <div class="game-loop">
-            <span>Core loop</span>
-            <strong>Dado → Tabuleiro → Pergunta → XP</strong>
+            <p class="visual-caption"><span class="status-dot" aria-hidden="true"></span> Um novo jeito de explorar o conhecimento.</p>
           </div>
         </div>
+        <dl class="case-facts" aria-label="Resumo do projeto" data-reveal>
+          <div><dt>Categoria</dt><dd>Jogo educacional</dd></div>
+          <div><dt>Motor do jogo</dt><dd>Godot Engine 4.6</dd></div>
+          <div><dt>Colaboração</dt><dd>4 integrantes</dd></div>
+          <div><dt>Status</dt><dd><span class="status-dot" aria-hidden="true"></span> Beta disponível</dd></div>
+        </dl>
       </section>
 
-      <section class="case-band" id="visao-geral">
-        <div class="case-section-heading">
-          <p class="eyebrow">Visão geral</p>
-          <h2>Uma jornada gamificada para transformar estudo em progresso.</h2>
-          <p>
-            O Jornada do Conhecimento une dinâmica de jogo, conteúdo escolar e
-            acompanhamento de desempenho em uma experiência pensada para alunos
-            e professores.
-          </p>
+      <section class="section case-overview" id="visao-geral" aria-labelledby="overview-title">
+        <div class="case-section-heading" data-reveal>
+          <div><p class="eyebrow">01 / O projeto</p><h2 id="overview-title">Do conteúdo escolar<br />à próxima conquista.</h2></div>
+          <p>Como deixar o estudo mais envolvente e ajudar o professor a acompanhar a evolução de cada aluno? A Jornada conecta essas duas pontas por meio do jogo.</p>
         </div>
-
         <div class="overview-grid">
-          <article class="case-card">
-            <i class="bi bi-bullseye" aria-hidden="true"></i>
-            <h3>Desafio</h3>
-            <p>
-              Tornar atividades de estudo mais envolventes e facilitar a leitura
-              do desempenho dos alunos por professores.
-            </p>
-          </article>
-          <article class="case-card">
-            <i class="bi bi-controller" aria-hidden="true"></i>
-            <h3>Como funciona</h3>
-            <p>
-              Um tabuleiro gamificado onde o aluno avança respondendo perguntas,
-              acumula XP e recebe feedback ao longo da jornada.
-            </p>
-          </article>
-          <article class="case-card">
-            <i class="bi bi-clipboard2-check" aria-hidden="true"></i>
-            <h3>Diferenciais</h3>
-            <p>
-              O jogo combina fluxo do aluno, painel do professor, importação de
-              perguntas, relatórios, API e uma primeira versão beta para teste.
-            </p>
-          </article>
+          <article class="case-card" data-reveal><span class="card-icon"><i class="bi bi-bullseye" aria-hidden="true"></i></span><span class="card-label">O desafio</span><h3>Despertar o interesse.</h3><p>Tornar as atividades de estudo mais interativas e facilitar a leitura do desempenho dos alunos.</p></article>
+          <article class="case-card" data-reveal><span class="card-icon"><i class="bi bi-controller" aria-hidden="true"></i></span><span class="card-label">A experiência</span><h3>Aprender em movimento.</h3><p>Rolar o dado, explorar o tabuleiro, responder perguntas e acumular XP com feedback ao longo do caminho.</p></article>
+          <article class="case-card" data-reveal><span class="card-icon"><i class="bi bi-bar-chart-line" aria-hidden="true"></i></span><span class="card-label">A conexão</span><h3>Entender o progresso.</h3><p>Painel do professor, importação de perguntas, API e relatórios conectam a experiência do aluno à gestão do conteúdo.</p></article>
         </div>
       </section>
 
-      <section class="case-section split-layout" id="solucao">
-        <div class="case-section-heading align-left">
-          <p class="eyebrow">Solução</p>
-          <h2>
-            Dois fluxos principais: aluno jogando e professor acompanhando.
-          </h2>
-          <p>
-            O projeto foi pensado para conectar motivação no aprendizado com
-            gestão de conteúdo e análise de evolução.
-          </p>
-        </div>
-
-        <div class="solution-columns">
-          <article class="solution-card">
-            <div class="solution-icon">
-              <i class="bi bi-person-walking" aria-hidden="true"></i>
+      <section class="case-solution-wrap" id="solucao" aria-labelledby="solution-title">
+        <div class="section case-solution">
+          <div class="case-section-heading" data-reveal><div><p class="eyebrow">02 / A experiência</p><h2 id="solution-title">Dois perfis.<br />Uma jornada conectada.</h2></div><p>O aluno encontra novos desafios. O professor ganha ferramentas para organizar o conteúdo e acompanhar o aprendizado.</p></div>
+          <div class="audience-experience" data-reveal>
+            <div class="audience-tabs" role="tablist" aria-label="Explorar os perfis do jogo" hidden>
+              <button type="button" role="tab" id="studentTab" aria-controls="studentPanel" aria-selected="true" tabindex="0"><i class="bi bi-controller" aria-hidden="true"></i> Para o aluno</button>
+              <button type="button" role="tab" id="teacherTab" aria-controls="teacherPanel" aria-selected="false" tabindex="-1"><i class="bi bi-mortarboard" aria-hidden="true"></i> Para o professor</button>
             </div>
-            <h3>Experiência do aluno</h3>
-            <ul>
-              <li>Seleção de perfil e entrada no jogo.</li>
-              <li>Rolagem de dado e avanço pelo tabuleiro.</li>
-              <li>Perguntas com dificuldade progressiva.</li>
-              <li>Feedback de resposta, pontuação e resultado final.</li>
-            </ul>
-          </article>
-
-          <article class="solution-card">
-            <div class="solution-icon">
-              <i class="bi bi-mortarboard-fill" aria-hidden="true"></i>
+            <div class="audience-panel" id="studentPanel">
+              <div class="audience-intro"><span class="audience-number" aria-hidden="true">01</span><p class="eyebrow">Perfil do aluno</p><h3>Cada resposta abre<br />um novo caminho.</h3><p>Um ciclo simples de entender, com dificuldade progressiva e feedback a cada etapa.</p><a class="text-link" href="#processo">Conhecer o fluxo <i class="bi bi-arrow-down-right" aria-hidden="true"></i></a></div>
+              <div class="feature-list"><article><i class="bi bi-person-check" aria-hidden="true"></i><div><h4>Entre na aventura</h4><p>Selecione seu perfil e inicie a jornada no jogo.</p></div></article><article><i class="bi bi-dice-5" aria-hidden="true"></i><div><h4>Explore o tabuleiro</h4><p>Role o dado e avance pelas casas com desafios de aprendizagem.</p></div></article><article><i class="bi bi-patch-question" aria-hidden="true"></i><div><h4>Coloque o conhecimento em jogo</h4><p>Responda perguntas com alternativas, tempo limite e dificuldade progressiva.</p></div></article><article><i class="bi bi-trophy" aria-hidden="true"></i><div><h4>Acompanhe suas conquistas</h4><p>Receba feedback, acumule pontuação e confira o resultado final.</p></div></article></div>
             </div>
-            <h3>Painel do professor</h3>
-            <ul>
-              <li>Gerenciamento de perguntas e conteúdos.</li>
-              <li>Importação por CSV ou Excel.</li>
-              <li>Dashboard, ranking e acompanhamento dos alunos.</li>
-              <li>Geração de perguntas com IA e relatórios de desempenho.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="case-gallery" aria-label="Identidade visual do projeto">
-        <img
-          class="gallery-bg"
-          src="../images/jornada/fundo-game.webp"
-          alt="Cenário visual do jogo Jornada do Conhecimento"
-        />
-        <div class="gallery-copy">
-          <p class="eyebrow">Identidade visual</p>
-          <h2>
-            Visual lúdico, mas organizado para uma experiência educacional.
-          </h2>
-          <p>
-            A interface usa elementos escolares, cores de tabuleiro e feedbacks
-            visuais para transformar conteúdo em progresso perceptível.
-          </p>
-        </div>
-        <img
-          class="gallery-character"
-          src="../images/jornada/personagem.webp"
-          alt="Personagem do jogo Jornada do Conhecimento"
-        />
-      </section>
-
-      <section class="case-band" id="processo">
-        <div class="case-section-heading">
-          <p class="eyebrow">Processo</p>
-          <h2>Como a experiência funciona na prática.</h2>
-        </div>
-
-        <div class="process-grid">
-          <article class="process-step">
-            <span>01</span>
-            <h3>Escolha do perfil</h3>
-            <p>
-              O usuário inicia escolhendo entre o fluxo do aluno e o fluxo do
-              professor, cada um com telas e objetivos próprios.
-            </p>
-          </article>
-          <article class="process-step">
-            <span>02</span>
-            <h3>Jornada no tabuleiro</h3>
-            <p>
-              O aluno rola o dado, avança pelas casas e segue uma progressão
-              inspirada em desafios de aprendizagem.
-            </p>
-          </article>
-          <article class="process-step">
-            <span>03</span>
-            <h3>Perguntas e pontuação</h3>
-            <p>
-              Cada rodada apresenta perguntas com alternativas, dificuldade,
-              pontuação, tempo limite e feedback de resposta.
-            </p>
-          </article>
-          <article class="process-step">
-            <span>04</span>
-            <h3>Gestão do professor</h3>
-            <p>
-              O professor pode organizar perguntas, importar planilhas e
-              acompanhar alunos por meio de painel administrativo.
-            </p>
-          </article>
-          <article class="process-step">
-            <span>05</span>
-            <h3>Resultados e release</h3>
-            <p>
-              A versão beta permite testar o fluxo principal, visualizar a
-              proposta completa e acompanhar a evolução do projeto.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section
-        class="presentation-section"
-        id="apresentacao"
-        aria-label="Apresentação do projeto"
-      >
-        <div class="case-section-heading">
-          <p class="eyebrow">Apresentação</p>
-          <h2>Conheça a proposta nos slides.</h2>
-          <p>
-            A apresentação reúne contexto, problema educacional, solução,
-            funcionalidades, tecnologias, pesquisa e próximos passos do Jornada
-            do Conhecimento.
-          </p>
-        </div>
-
-        <div class="presentation-panel">
-          <iframe
-            src="https://docs.google.com/presentation/d/1Kyz9Suldy2l6BL86Rp97u0el5KHSLsw9/embed?start=false&loop=false&delayms=3000"
-            title="Apresentação Jornada do Conhecimento"
-            loading="lazy"
-            allowfullscreen
-          ></iframe>
-        </div>
-
-        <div class="presentation-actions">
-          <a
-            class="button primary"
-            href="https://docs.google.com/presentation/d/1Kyz9Suldy2l6BL86Rp97u0el5KHSLsw9/edit?usp=sharing&ouid=116466115550639654111&rtpof=true&sd=true"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
-            Abrir apresentação
-          </a>
-        </div>
-      </section>
-
-      <section class="case-section" id="tecnologias">
-        <div class="case-section-heading">
-          <p class="eyebrow">Tecnologias</p>
-          <h2>Tecnologias por trás do jogo, da API e da gestão de conteúdo.</h2>
-        </div>
-
-        <div class="tech-grid">
-          <span class="tech-pill">Godot Engine 4.6</span>
-          <span class="tech-pill">GDScript</span>
-          <span class="tech-pill">NestJS</span>
-          <span class="tech-pill">TypeScript</span>
-          <span class="tech-pill">TypeORM</span>
-          <span class="tech-pill">PostgreSQL</span>
-          <span class="tech-pill">SQLite</span>
-          <span class="tech-pill">CSV e Excel</span>
-          <span class="tech-pill">Google GenAI</span>
-          <span class="tech-pill">GitHub</span>
-          <span class="tech-pill">Trello</span>
-          <span class="tech-pill">Kanban e Scrum</span>
-        </div>
-
-        <div class="artifact-grid">
-          <article class="artifact-card">
-            <h3>Fluxo principal</h3>
-            <p>
-              Seleção de perfil, tela inicial, carregamento, tabuleiro,
-              perguntas e encerramento com resultado.
-            </p>
-          </article>
-          <article class="artifact-card">
-            <h3>Fluxo professor</h3>
-            <p>
-              Acesso do professor, painel administrativo, banco de perguntas,
-              dashboard, ranking e relatórios.
-            </p>
-          </article>
-          <article class="artifact-card">
-            <h3>Dados e conteúdo</h3>
-            <p>
-              Importação de perguntas por planilha, alternativas, dificuldade,
-              pontuação, tempo limite e resposta correta.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="result-section" id="resultado">
-        <div class="result-panel">
-          <p class="eyebrow">Resultado</p>
-          <h2>Nova versão beta disponível para teste.</h2>
-          <p>
-            O Jornada do Conhecimento já conta com uma nova release para
-            experimentar a dinâmica do tabuleiro, perguntas, pontuação e
-            interação principal do jogador. A versão
-            <strong>v0.3.1 Beta</strong>
-            está disponível para download pelo GitHub.
-          </p>
-
-          <div class="result-actions">
-            <a
-              class="button primary"
-              href="https://github.com/Leonardo-frachine/jogo_jornada_conhecimento"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="bi bi-code-slash" aria-hidden="true"></i>
-              Abrir código
-            </a>
-            <a
-              class="button secondary"
-              href="https://github.com/Leonardo-frachine/jogo_jornada_conhecimento/releases/download/v0.3.1-beta/Jornada.do.conhecimento.exe"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="bi bi-download" aria-hidden="true"></i>
-              Baixar jogo
-            </a>
-            <a
-              class="button secondary"
-              href="https://github.com/Leonardo-frachine/jogo_jornada_conhecimento/releases/tag/v0.3.1-beta"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
-              Ver release
-            </a>
+            <div class="audience-panel" id="teacherPanel">
+              <div class="audience-intro"><span class="audience-number" aria-hidden="true">02</span><p class="eyebrow">Perfil do professor</p><h3>Conteúdo organizado.<br />Evolução à vista.</h3><p>Ferramentas de gestão para preparar os desafios e acompanhar o desempenho da turma.</p><a class="text-link" href="#tecnologias">Explorar as tecnologias <i class="bi bi-arrow-down-right" aria-hidden="true"></i></a></div>
+              <div class="feature-list"><article><i class="bi bi-journal-text" aria-hidden="true"></i><div><h4>Gerencie as perguntas</h4><p>Organize conteúdos, alternativas, dificuldade, pontuação e resposta correta.</p></div></article><article><i class="bi bi-file-earmark-spreadsheet" aria-hidden="true"></i><div><h4>Importe suas planilhas</h4><p>Adicione perguntas por arquivos CSV ou Excel.</p></div></article><article><i class="bi bi-bar-chart-line" aria-hidden="true"></i><div><h4>Visualize o desempenho</h4><p>Acompanhe os alunos com dashboard, ranking e relatórios.</p></div></article><article><i class="bi bi-stars" aria-hidden="true"></i><div><h4>Crie novos desafios</h4><p>Use a geração de perguntas com IA como apoio à gestão do conteúdo.</p></div></article></div>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div class="team-panel">
-          <h3>Equipe</h3>
-          <ul>
-            <li>Guilherme Poit Vasconcelos</li>
-            <li>Gustavo Henrique de Oliveira</li>
-            <li>Leonardo Dias Frachine</li>
-            <li>Nathan Henrique Mariotto Ritz</li>
-          </ul>
+      <section class="section" id="processo" aria-labelledby="process-title">
+        <div class="case-section-heading" data-reveal><div><p class="eyebrow">03 / Como funciona</p><h2 id="process-title">Da primeira escolha<br />ao resultado final.</h2></div><p>Uma experiência construída para conectar o ritmo da partida ao acompanhamento do aprendizado.</p></div>
+        <ol class="process-grid">
+          <li class="process-step" data-reveal><span class="step-number">01</span><h3>Escolha o perfil</h3><p>Aluno e professor acessam telas e objetivos próprios.</p></li>
+          <li class="process-step" data-reveal><span class="step-number">02</span><h3>Avance no jogo</h3><p>O dado leva o aluno por uma sequência de desafios no tabuleiro.</p></li>
+          <li class="process-step" data-reveal><span class="step-number">03</span><h3>Responda e evolua</h3><p>Perguntas, tempo limite, pontuação e feedback guiam cada rodada.</p></li>
+          <li class="process-step" data-reveal><span class="step-number">04</span><h3>Acompanhe a turma</h3><p>O professor organiza perguntas e acompanha os alunos pelo painel.</p></li>
+          <li class="process-step" data-reveal><span class="step-number">05</span><h3>Explore a beta</h3><p>Teste o fluxo principal e acompanhe as próximas versões do projeto.</p></li>
+        </ol>
+      </section>
+
+      <section class="section case-world" aria-labelledby="world-title">
+        <div class="world-copy" data-reveal><p class="eyebrow">04 / Universo visual</p><h2 id="world-title">Um mundo que<br />convida a descobrir.</h2><p>Livros, lápis e um caminho cheio de cores. A identidade aproxima o conteúdo escolar de uma aventura e torna o progresso parte da experiência.</p><div class="world-tags"><span>Exploração</span><span>Aprendizado</span><span>Conquistas</span></div></div>
+        <div class="world-art" data-reveal><img class="world-background" src="../images/jornada/fundo-game.webp" width="1480" height="807" loading="lazy" alt="Cenário ilustrado do universo Jornada do Conhecimento." /><img class="world-logo" src="../images/jornada/logo-jornada.webp" width="920" height="613" loading="lazy" alt="Identidade visual Jornada do Conhecimento." /><img class="world-character" src="../images/jornada/personagem.webp" width="520" height="344" loading="lazy" alt="Personagem aventureiro do jogo segurando um troféu." /><span class="world-caption">Jornada do Conhecimento / identidade do jogo</span></div>
+      </section>
+
+      <section class="section" id="tecnologias" aria-labelledby="tech-title">
+        <div class="case-section-heading" data-reveal><div><p class="eyebrow">05 / Construção</p><h2 id="tech-title">O que faz a<br />jornada acontecer.</h2></div><p>Do tabuleiro à API, uma combinação de ferramentas para conectar jogo, dados e gestão de conteúdo.</p></div>
+        <div class="tech-cards">
+          <article class="tech-card" data-reveal><div class="tech-card-top"><i class="bi bi-controller" aria-hidden="true"></i><span>01 / Jogo</span></div><h3>A experiência interativa</h3><p>Seleção de perfil, tela inicial, carregamento, tabuleiro, perguntas e encerramento com resultado.</p><div class="tech-tags"><span>Godot Engine 4.6</span><span>GDScript</span></div></article>
+          <article class="tech-card" data-reveal><div class="tech-card-top"><i class="bi bi-database" aria-hidden="true"></i><span>02 / API e dados</span></div><h3>A base da aplicação</h3><p>Serviços e persistência para o banco de perguntas, painel administrativo, dashboard, ranking e relatórios.</p><div class="tech-tags"><span>NestJS</span><span>TypeScript</span><span>TypeORM</span><span>PostgreSQL</span><span>SQLite</span></div></article>
+          <article class="tech-card" data-reveal><div class="tech-card-top"><i class="bi bi-diagram-3" aria-hidden="true"></i><span>03 / Conteúdo e equipe</span></div><h3>Criação em colaboração</h3><p>Importação de planilhas, geração de perguntas com IA e organização das entregas do time.</p><div class="tech-tags"><span>CSV e Excel</span><span>Google GenAI</span><span>GitHub</span><span>Trello</span><span>Kanban e Scrum</span></div></article>
         </div>
       </section>
+
+      <section class="presentation-wrap" id="apresentacao" aria-labelledby="presentation-title">
+        <div class="section">
+          <div class="case-section-heading" data-reveal><div><p class="eyebrow">06 / Apresentação</p><h2 id="presentation-title">A história por trás<br />da experiência.</h2></div><div><p>Contexto, pesquisa, problema educacional, funcionalidades e próximos passos: conheça a proposta completa nos slides.</p><a class="text-link" href="https://docs.google.com/presentation/d/1Kyz9Suldy2l6BL86Rp97u0el5KHSLsw9/edit?usp=sharing&amp;ouid=116466115550639654111&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer">Abrir apresentação <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></div></div>
+          <div class="presentation-panel" data-reveal><div class="screen-toolbar"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>Jornada do Conhecimento / apresentação</span><i class="bi bi-easel2" aria-hidden="true"></i></div><iframe src="https://docs.google.com/presentation/d/1Kyz9Suldy2l6BL86Rp97u0el5KHSLsw9/embed?start=false&amp;loop=false&amp;delayms=3000" title="Apresentação do projeto Jornada do Conhecimento" loading="lazy" allowfullscreen></iframe></div>
+        </div>
+      </section>
+
+      <section class="section case-result" id="resultado" aria-labelledby="result-title">
+        <div class="result-panel" data-reveal><p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> v0.3.1 Beta disponível</p><h2 id="result-title">Sua próxima jornada<br />começa aqui.</h2><p>Experimente a dinâmica do tabuleiro, as perguntas e a pontuação na versão beta para Windows. O código e as informações da release estão no GitHub.</p><div class="case-actions"><a class="button primary" href="https://github.com/Leonardo-frachine/jogo_jornada_conhecimento/releases/download/v0.3.1-beta/Jornada.do.conhecimento.exe" target="_blank" rel="noopener noreferrer">Baixar o jogo <i class="bi bi-download" aria-hidden="true"></i></a><a class="button secondary" href="https://github.com/Leonardo-frachine/jogo_jornada_conhecimento/releases/tag/v0.3.1-beta" target="_blank" rel="noopener noreferrer">Ver release <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></div><a class="text-link" href="https://github.com/Leonardo-frachine/jogo_jornada_conhecimento" target="_blank" rel="noopener noreferrer">Explorar o repositório <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></div>
+        <aside class="team-panel" aria-labelledby="team-title" data-reveal><p class="eyebrow">Feito em equipe</p><h3 id="team-title">Quatro pessoas.<br />Uma ideia em comum.</h3><ul><li><span aria-hidden="true">GV</span>Guilherme Poit Vasconcelos</li><li><span aria-hidden="true">GO</span>Gustavo Henrique de Oliveira</li><li><span aria-hidden="true">LF</span>Leonardo Dias Frachine</li><li><span aria-hidden="true">NM</span>Nathan Henrique Mariotto Ritz</li></ul></aside>
+      </section>
+
+      <a class="case-next container" href="../spacewar/" data-reveal><div><p class="eyebrow">Continue explorando</p><h2>Space War<span>.</span></h2><p>Conheça também o projeto de combate espacial.</p></div><span class="next-arrow" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span></a>
     </main>
 
-    <footer class="site-footer">
-      <p>Jornada do Conhecimento • Página do projeto</p>
-      <a href="../">Voltar ao portfólio</a>
-    </footer>
+    <footer class="site-footer container"><p>© <span id="currentYear">2026</span> Nathan Mariotto</p><span>Jornada do Conhecimento</span><a href="../">Voltar ao portfólio <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></footer>
 
-    <script src="../script.js"></script>
+    <dialog class="board-preview" id="boardPreview" aria-labelledby="previewTitle"><div class="preview-heading"><h2 id="previewTitle">Prévia do tabuleiro</h2><button type="button" id="closePreview" aria-label="Fechar prévia" autofocus><i class="bi bi-x-lg" aria-hidden="true"></i></button></div><img src="../images/jornada/tabuleiro.webp" width="1480" height="987" loading="lazy" alt="Arte completa do tabuleiro do Jornada do Conhecimento, com casas coloridas e elementos escolares." /><p>Jornada do Conhecimento · Arte do tabuleiro</p></dialog>
   </body>
 </html>
